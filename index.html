@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zahra Essam Portfolio</title>
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/timeline.css">
+<link rel="stylesheet" href="css/skills.css">
+<link rel="stylesheet" href="css/experience.css">
+<link rel="stylesheet" href="css/education.css">
+<link rel="stylesheet" href="css/courses.css">
+<link rel="stylesheet" href="css/languages.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/youtube.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/training.css">
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+/* ===== ULTRA PROJECTS ===== */
+
+.filters{
+display:flex;
+gap:10px;
+margin-bottom:25px;
+flex-wrap:wrap;
+}
+
+.filters button{
+padding:8px 16px;
+border-radius:20px;
+border:none;
+cursor:pointer;
+font-weight:600;
+}
+
+.featured-scroll{
+display:flex;
+overflow-x:auto;
+gap:25px;
+padding-bottom:15px;
+scroll-snap-type:x mandatory;
+}
+
+.featured-scroll::-webkit-scrollbar{
+height:6px;
+}
+
+.featured-scroll::-webkit-scrollbar-thumb{
+background:#999;
+border-radius:10px;
+}
+
+.project-card{
+min-width:420px;
+scroll-snap-align:start;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+transition:.4s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+}
+
+.laptop-frame{
+background:#111;
+padding:12px;
+border-radius:18px;
+}
+
+.laptop-frame img{
+width:100%;
+border-radius:10px;
+display:block;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.6);
+opacity:0;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+transition:.3s;
+}
+
+.project-card:hover .overlay{
+opacity:1;
+}
+
+.overlay a{
+padding:10px 16px;
+background:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.tags{
+margin-top:8px;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.tags span{
+font-size:12px;
+padding:4px 10px;
+border-radius:12px;
+background:#eee;
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      <span class="dot"></span> Zahra Essam
+    </div>
+
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="nav-cta">Hire Me</a>
+
+  </div>
+</header>
+
+
+<section id="hero" class="hero">
+  <div class="hero-container">
+
+    <!-- Text Block -->
+    <div class="hero-text">
+      <h1 class="hero-title">
+        <span class="highlight"></span>
+      </h1>
+      <p class="hero-desc">
+        Frontend Engineer | Open for work
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+      <!-- Quick Tech Chips -->
+      <div class="tech-chips">
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>API</span>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="assets/images/profile.jpg" alt="Zahra Essam">
+    </div>
+
+  </div>
+
+  <!-- Subtle floating shapes / background blur -->
+  <div class="bg-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+</section>
+
+
+<section id="about" class="about container">
+  <h2 class="section-title"><span class="dot"></span> About Me</h2>
+
+  <div class="about-content">
+    <p>
+      I am a Frontend Engineer with a Computer Science background, specialized in building responsive and user-friendly web applications.
+      I have experience with React.js, JavaScript, HTML, CSS, and working with APIs. I enjoy creating interactive interfaces and clean code architecture.
+    </p>
+
+    <!-- Skills / Tech Stack (Optional) -->
+    <div class="tech-chips">
+      <span>React</span>
+      <span>JavaScript</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>TypeScript</span>
+      <span>Bootstrap</span>
+      <span>Git</span>
+      <span>Figma</span>
+      <span>API</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== ULTRA PROJECTS ===== -->
+<section id="projects" class="container">
+
+<h2 class="section-title"><span class="dot"></span> Projects</h2>
+
+<div class="filters">
+  <button onclick="filterProjects('all')">All</button>
+  <button onclick="filterProjects('frontend')">Frontend</button>
+  <button onclick="filterProjects('js')">JavaScript</button>
+  <button onclick="filterProjects('ui')">UI</button>
+</div>
+
+<!-- FEATURED HORIZONTAL SCROLL -->
+<div class="featured-scroll">
+
+  <!-- 1. Async Await Demo -->
+  <div class="project-card project frontend js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/async-await-demo.PNG" alt="Async Await Demo">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/async-await-demo/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/async-await-demo" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Demo showing Async/Await in JS with sequential vs parallel API calls.">
+    </div>
+    <div class="project-body">
+      <h3>Async Await Demo</h3>
+      <div class="tags"><span>JavaScript</span><span>API</span></div>
+    </div>
+  </div>
+
+  <!-- 2. GitHub User Finder -->
+  <div class="project-card project frontend js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/234.PNG" alt="GitHub User Finder">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/GitHub-User-Finder/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/GitHub-User-Finder" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Find GitHub users and see their repos using GitHub API.">
+    </div>
+    <div class="project-body">
+      <h3>GitHub User Finder</h3>
+      <div class="tags"><span>JavaScript</span><span>API</span></div>
+    </div>
+  </div>
+
+  <!-- 3. Weather App -->
+  <div class="project-card project frontend js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/weatherApp.PNG" alt="Weather App">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/Weather-App/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/Weather-App" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Weather App using API to show live weather info for any city.">
+    </div>
+    <div class="project-body">
+      <h3>Weather App</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <!-- 4. Book Haven -->
+  <div class="project-card project frontend">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/hgotk.PNG" alt="Book Haven">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/book-haven/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/book-haven" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="A simple book library web page with HTML & CSS UI design.">
+    </div>
+    <div class="project-body">
+      <h3>Book Haven</h3>
+      <div class="tags"><span>HTML</span><span>CSS</span></div>
+    </div>
+  </div>
+
+  <!-- 5. Falling Egg Game -->
+  <div class="project-card project js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/fallingEggs.PNG" alt="Falling Egg Game">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/Falling-Egg-Game/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/Falling-Egg-Game" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="A small JS game where eggs fall and the player catches them.">
+    </div>
+    <div class="project-body">
+      <h3>Falling Egg Game</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <!-- 6. Bank System -->
+  <div class="project-card project js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/rrr.PNG" alt="Bank System">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/BankSystemProject-DEBILab3/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/BankSystemProject-DEBILab3" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Bank System simulation with JS for deposits, withdrawals, and balance.">
+    </div>
+    <div class="project-body">
+      <h3>Bank System</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <!-- 7. Future Processing Blog (Bootstrap) -->
+  <div class="project-card project ui">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/blog1.PNG" alt="Future Processing Blog Bootstrap">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/Teleport_HQ-With_Bootstrap/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/Teleport_HQ-With_Bootstrap" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Responsive blog page built with Bootstrap, includes header, footer, and posts.">
+    </div>
+    <div class="project-body">
+      <h3>Future Processing Blog</h3>
+      <div class="tags"><span>Bootstrap</span></div>
+    </div>
+  </div>
+
+  <!-- 8. Future Processing Blog (HTML/CSS) -->
+  <div class="project-card project ui">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/Blog11.PNG" alt="Future Processing Blog HTML CSS">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/FutureProcessingBlog-UI/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/FutureProcessingBlog-UI" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Static blog UI built with HTML and CSS only.">
+    </div>
+    <div class="project-body">
+      <h3>Future Processing Blog</h3>
+      <div class="tags"><span>HTML</span><span>CSS</span></div>
+    </div>
+  </div>
+
+  <!-- 9. Pet Adoption Center -->
+  <div class="project-card project ui">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/pit.PNG" alt="Pet Adoption Center">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/UI-Design---Pet-Adoption-Center-Community/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/UI-Design---Pet-Adoption-Center-Community" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Pet adoption landing page with HTML/CSS UI design.">
+    </div>
+    <div class="project-body">
+      <h3>Pet Adoption Center</h3>
+      <div class="tags"><span>HTML</span><span>CSS</span></div>
+    </div>
+  </div>
+
+  <!-- 10. StockEase -->
+  <div class="project-card project js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/ww.PNG" alt="StockEase">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/StockEase/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/StockEase" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Inventory manager app built with JavaScript to track stock items.">
+    </div>
+    <div class="project-body">
+      <h3>StockEase - Inventory Manager</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <!-- 11. To-Do List App -->
+  <div class="project-card project js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/yyy.PNG" alt="To-Do List App">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/To-Do-List/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/To-Do-List" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Simple To-Do list application with add, delete, and mark tasks.">
+    </div>
+    <div class="project-body">
+      <h3>To-Do List App</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+  <!-- 12. DayFlow App -->
+  <div class="project-card project js">
+    <div class="laptop-frame">
+      <img src="assets/images/projects/gvtv.PNG" alt="DayFlow App">
+    </div>
+    <div class="overlay">
+      <a href="https://zahraessam.github.io/DayFlow-app/" target="_blank">
+        <img src="assets/icons/3318660.png" alt="Live Demo">
+      </a>
+      <a href="https://github.com/ZahraEssam/DayFlow-app" target="_blank">
+        <img src="assets/icons/GitHub-Logo.png" alt="GitHub">
+      </a>
+      <img class="info-icon" src="assets/icons/information-small-letter-i-symbol.png" 
+           alt="Info" 
+           data-tooltip="Day planner app built with JavaScript for managing daily tasks.">
+    </div>
+    <div class="project-body">
+      <h3>DayFlow App</h3>
+      <div class="tags"><span>JavaScript</span></div>
+    </div>
+  </div>
+
+</div> <!-- end featured-scroll -->
+
+</section>
+
+<!-- Tooltip element -->
+<div class="tooltip" id="tooltip"></div>
+
+
+
+<section id="skills" class="container">
+  <h2 class="section-title"><span class="dot"></span> Skills</h2>
+
+  <!-- Core Languages -->
+  <div class="skills-category">
+    <h3>Core Languages</h3>
+    <div class="skills-grid">
+      <div class="skill-badge html">
+        <img src="assets/icons/html5.png" alt="HTML5 Icon">
+        <span class="skill-name html">HTML5</span>
+      </div>
+      <div class="skill-badge css">
+        <img src="assets/icons/css3.png" alt="CSS3 Icon">
+        <span class="skill-name css">CSS3</span>
+      </div>
+      <div class="skill-badge js">
+        <img src="assets/icons/javascript.png" alt="JavaScript Icon">
+        <span class="skill-name js">JavaScript</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advanced / Frameworks -->
+  <div class="skills-category">
+    <h3>Advanced / Frameworks</h3>
+    <div class="skills-grid">
+      <div class="skill-badge react">
+        <img src="assets/icons/react.png" alt="React Icon">
+        <span class="skill-name react">React.js</span>
+      </div>
+      <div class="skill-badge ts">
+        <img src="assets/icons/typescript.png" alt="TypeScript Icon">
+        <span class="skill-name ts">TypeScript</span>
+      </div>
+      <div class="skill-badge bootstrap">
+        <img src="assets/icons/bootstrap.png" alt="Bootstrap Icon">
+        <span class="skill-name bootstrap">Bootstrap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools & Others -->
+  <div class="skills-category">
+    <h3>Tools & Others</h3>
+    <div class="skills-grid">
+      <div class="skill-badge git">
+        <img src="assets/icons/GitHub-Logo.png" alt="Git Icon">
+        <span class="skill-name git">Git & GitHub</span>
+      </div>
+      <div class="skill-badge figma">
+        <img src="assets/icons/Figma-logo.png" alt="Figma Icon">
+        <span class="skill-name figma">Figma</span>
+      </div>
+      <div class="skill-badge api">
+        <img src="assets/icons/restapis.png" alt="REST API Icon">
+        <span class="skill-name api">REST APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section id="experience" class="container">
+  <h2 class="section-title"><span class="dot"></span> Experience</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Oct 2024 – May 2025</div>
+      <h3>Peer Tutor – El Shorouk Academy</h3>
+      <p>Led peer learning sessions to simplify complex topics (OOP, DS, Algorithms). Applied problem-solving and analytical thinking skills later in frontend development.</p>
+    </div>
+</section> 
+-->
+
+
+<section id="education" class="container">
+  <h2 class="section-title"><span class="dot"></span> Education</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Oct 2021 – May 2025</div>
+      <h3>El Shorouk Academy – Faculty of Computer Science</h3>
+      <p>Cairo, Egypt<br>Graduation Project: <strong>Skin Cancer Detection & Classification</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<section id="training" class="container">
+  <h2 class="section-title"><span class="dot"></span> Training & Courses</h2>
+
+  <div class="timeline">
+
+    <!-- DEBI Frontend -->
+    <div class="timeline-item">
+      <div class="timeline-date">Dec 2025 – May 2026</div>
+      <h3>
+                <img src="/assets/images/trainning/depi.png" alt="DEBI Frontend Program" class="training-thumb">
+
+        Frontend Development Program (React) – DEBI
+      </h3>
+      <p>Learning React, component-based architecture, and modern JavaScript. Building hands-on projects alongside the course.</p>
+    </div>
+
+    <!-- ITI Frontend -->
+    <div class="timeline-item">
+      <div class="timeline-date">Aug 2025 – Oct 2025</div>
+      <h3>
+                <img src="/assets/images/trainning/iti.png" alt="ITI Frontend Program" class="training-thumb">
+
+        Front-End Development (React) – ITI
+      </h3>
+      <p>Built responsive web apps using React.js, Hooks, and state management.</p>
+    </div>
+
+    <!-- ECPC Trainee -->
+    <div class="timeline-item">
+      <div class="timeline-date">Aug 2022 – Jul 2023</div>
+      <div class="training-content">
+      <h3>
+                <img src="/assets/images/trainning/ecpc.png" alt="ECPC Programming Trainee" class="training-thumb">
+
+        Programming Trainee – ECPC
+      </h3>
+      <!-- Certificate Icon -->
+<img class="cert-icon" 
+     src="/assets/images/trainning/certificates/certificateicon2.png" 
+     data-full="assets/images/trainning/certificates/iti.png" 
+     alt="Certificate DEBI React"
+     title="View Certificate">
+</div>
+      <p>Practiced competitive programming and problem-solving using C++.</p>
+    </div>
+
+  </div>
+
+  
+</section>
+
+
+<!-- Modal Lightbox -->
+<div id="trainingModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
+
+
+
+<section id="youtube" class="container youtube-section">
+  <h2 class="section-title"><span class="dot"></span> JavaScript Tutorials</h2>
+  
+  <div class="youtube-grid">
+    <a href="https://www.youtube.com/watch?v=R7FecqLVBBQ&t=4s&pp=0gcJCZEKAYcqIYzv" target="_blank" class="youtube-card">
+      <img src="assets/images/youtube/video3.png" alt="YouTube Icon">
+      <div class="youtube-info">
+        <h3>JavaScript Hoisting — What Really Happens 🚀</h3>
+        <span>97 views • 3 months ago</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=UB6dgp0kN9c" target="_blank" class="youtube-card">
+      <img src="assets/images/youtube/video2.png" alt="YouTube Icon">
+      <div class="youtube-info">
+        <h3>Let vs Var Inside Loops — The Real Difference 🔁</h3>
+        <span>50 views • 3 months ago</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=3LyNdxWJwPI" target="_blank" class="youtube-card">
+      <img src="assets/images/youtube/video1.png" alt="YouTube Icon">
+      <div class="youtube-info">
+        <h3>JavaScript Closures Explained Simply 🔒</h3>
+        <span>379 views • 3 months ago</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=09DX3Y-SAWY&t=6s" target="_blank" class="youtube-card">
+      <img src="assets/images/youtube/video4.png" alt="YouTube Icon">
+      <div class="youtube-info">
+        <h3>Master JavaScript Scope in Minutes 🔍</h3>
+        <span>58 views • 3 months ago</span>
+      </div>
+    </a>
+  </div>
+  <!-- YouTube CTA -->
+<div class="youtube-cta">
+  <a href="https://www.youtube.com/@zahraessam2" target="_blank" class="btn-youtube">
+    <img src="assets/icons/youtube.png" alt="YouTube Icon">
+    <span>Watch More JS Tutorials</span>
+  </a>
+</div>
+
+</section>
+
+
+
+<section id="languages" class="container">
+  <h2 class="section-title"><span class="dot"></span> Languages</h2>
+
+  <div class="languages-grid">
+    <div class="language-badge">
+      <span>Arabic</span>
+      <div class="lang-level">Native</div>
+    </div>
+    <div class="language-badge">
+      <span>English</span>
+      <div class="lang-level">Intermediate</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="container contact-section">
+  <h2 class="section-title"><span class="dot"></span> Contact</h2>
+
+  <div class="contact-grid">
+    <a href="mailto:zahraaessam223@gmail.com" class="contact-card">
+      <img src="assets/icons/Gmail.png" alt="Email Icon">
+      <span>Email</span>
+    </a>
+
+    <!-- <a href="tel:01022919252" class="contact-card">
+      <img src="assets/icons/phone.png" alt="Phone Icon">
+      <span>Phone</span>
+    </a> -->
+
+    <!--<a href="https://www.google.com/maps/place/Cairo,+Egypt" target="_blank" class="contact-card">
+      <img src="assets/icons/location.png" alt="Location Icon">
+      <span>Location</span>
+    </a>-->
+
+    <a href="https://www.linkedin.com/in/zahraessam/" target="_blank" class="contact-card">
+      <img src="assets/icons/linkedin.png" alt="LinkedIn Icon">
+      <span>LinkedIn</span>
+    </a>
+
+    <a href="https://github.com/ZahraEssam" target="_blank" class="contact-card">
+      <img src="assets/icons/GitHub-Logo.png" alt="GitHub Icon">
+      <span>GitHub</span>
+    </a>
+
+    <a href="https://codeforces.com/profile/Zahra__" target="_blank" class="contact-card">
+      <img src="assets/icons/codeforces.png" alt="Codeforces Icon">
+      <span>Codeforces</span>
+    </a>
+  </div>
+</section>
+
+
+
+<script>
+
+function toggleProjects(){
+const more=document.getElementById("moreProjects");
+more.style.display=more.style.display==="none"?"grid":"none";
+}
+
+function filterProjects(type){
+document.querySelectorAll(".project").forEach(p=>{
+if(type==="all") p.style.display="block";
+else p.style.display=p.classList.contains(type)?"block":"none";
+});
+}
+
+</script>
+
+<script src="js/projects.js"></script>
+<script src="js/main.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/training.js"></script>
+
+
+
+
+
+</body>
+</html>

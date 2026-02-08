@@ -1,0 +1,157 @@
+/* ===== Hero Section ===== */
+.hero{
+  position:relative;
+  padding:120px 20px 80px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hero-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1200px;
+  margin:auto;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+/* Text Block */
+.hero-text{
+  flex:1;
+  z-index:2;
+}
+
+.hero-title{
+  font-size:3.5rem; /* اكبر شويّة الاسم */
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:20px;
+  white-space: nowrap; /* Name in single line */
+}
+
+.highlight{
+  background:linear-gradient(90deg,#6a11cb,#2575fc); /* gradient highlight */
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-desc{
+  font-size:1.1rem;
+  color:var(--dark); /* استخدم اللون الهادئ من palette */
+  margin-bottom:30px;
+}
+
+/* CTA Buttons */
+.hero-cta{
+  display:flex;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  cursor:pointer;
+  position:relative;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:white;
+}
+
+.btn-outline{
+  border:2px solid var(--accent);
+  color:var(--accent);
+  background:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Glow cursor hover فقط للCTA */
+.btn-primary:hover::after,
+.btn-outline:hover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:30px;
+  box-shadow:0 0 15px rgba(97,119,255,0.4);
+}
+
+/* Availability badge */
+.availability-badge{
+  display:inline-block;
+  background:#2575fc;
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:500;
+  margin-bottom:20px;
+}
+
+/* Tech chips */
+.tech-chips{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.tech-chips span{
+  background:rgba(139,76,59,0.1); /* soft palette color */
+  color:var(--accent);
+  padding:6px 12px;
+  border-radius:20px;
+  font-weight:500;
+  font-size:0.9rem;
+}
+
+/* Hero Image */
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  margin-left:40px; /* مساحة عن النص */
+}
+
+.hero-image img{
+  width:320px;
+  border-radius:20px;
+  animation:float 6s ease-in-out infinite;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  transition:transform 0.3s ease;
+}
+
+/* Floating animation */
+@keyframes float{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-15px);}
+}
+
+/* Background shapes */
+.bg-shapes{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+}
+
+.shape{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.3;
+}
+
+.shape1{width:200px;height:200px;background:var(--accent);top:10%;left:5%;}
+.shape2{width:300px;height:300px;background:var(--dark);bottom:20%;right:10%;}
+.shape3{width:150px;height:150px;background:#8b4c3b;top:30%;right:30%;}

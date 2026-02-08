@@ -1,0 +1,105 @@
+.filters{
+  display:flex;
+  gap:10px;
+  margin-bottom:25px;
+  flex-wrap:wrap;
+}
+.filters button{
+  padding:8px 16px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.featured-scroll{
+  display:flex;
+  overflow-x:auto;
+  gap:25px;
+  padding-bottom:15px;
+  scroll-snap-type:x mandatory;
+}
+.featured-scroll::-webkit-scrollbar{
+  height:6px;
+}
+.featured-scroll::-webkit-scrollbar-thumb{
+  background:#999;
+  border-radius:10px;
+}
+
+.project-card{
+  min-width:420px;
+  scroll-snap-align:start;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  transition:.4s;
+}
+.project-card:hover{
+  transform:translateY(-8px);
+}
+
+.laptop-frame{
+  background:#111;
+  padding:12px;
+  border-radius:18px;
+}
+.laptop-frame img{
+  width:100%;
+  border-radius:10px;
+  display:block;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  opacity:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  transition:.3s;
+}
+.project-card:hover .overlay{
+  opacity:1;
+}
+
+.overlay .info-btn{
+  background:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:50%;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.tags{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tags span{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:12px;
+  background:#eee;
+}
+
+.project-body p{
+  margin-top:5px;
+  font-size:13px;
+  color:#555;
+}
+
+.overlay a img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.overlay a img:hover {
+  transform: scale(1.2);
+}

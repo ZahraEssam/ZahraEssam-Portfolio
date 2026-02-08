@@ -1,0 +1,64 @@
+/* Skills Category Titles */
+.skills-category h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* Skill Badge */
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover subtle lift + gradient glow */
+.skill-badge:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, rgba(139,76,59,0.08), rgba(58,46,40,0.08));
+}
+
+/* Icon inside badge */
+.skill-badge img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Skill Name with official color */
+.skill-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Color mapping */
+.skill-name.html { color: #e6552d; }
+.skill-name.css { color: #3178C6; }
+.skill-name.js { color: #0c0c0c; }
+.skill-name.react { color: #61DAFB; color:#111; }
+.skill-name.tailwind { color: #38B2AC; }
+.skill-name.git { color: #060606; }
+.skill-name.figma { color: #F24E1E; }
+.skill-name.ts { color: #3178C6; }
+.skill-name.api { color: #080808; }
+.skill-name.bootstrap { color: #5d2872; }

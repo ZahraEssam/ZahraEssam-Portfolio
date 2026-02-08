@@ -1,0 +1,57 @@
+/* Contact Grid */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Contact Card */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 12px; /* subtle rounding */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #111;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon inside card */
+.contact-card img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Card Hover Effects */
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.05); /* lift + subtle scale */
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* shadow grow */
+}
+
+/* Icon glow on hover */
+.contact-card:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(139, 76, 59, 0.6)) drop-shadow(0 0 8px rgba(58, 46, 40, 0.6));
+}
+
+/* Optional: text subtle color shift */
+.contact-card span {
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover span {
+  color: var(--accent);
+}

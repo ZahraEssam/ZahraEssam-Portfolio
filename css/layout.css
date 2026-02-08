@@ -1,0 +1,153 @@
+/* NAVIGATION */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.nav .links a{
+  margin-left:20px;
+  font-weight:500;
+  color:var(--dark);
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:30px;
+  align-items:center;
+  min-height:80vh;
+}
+
+.profile-card{
+  background:var(--card);
+  padding:30px;
+  border-radius:var(--radius);
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+.profile-card img{
+  width:160px;
+  border-radius:50%;
+  margin:auto;
+}
+
+.hero-text h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero-text p{
+  max-width:520px;
+}
+
+/* PROJECTS */
+.projects-grid{
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
+
+.project-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  overflow:hidden;
+  transition:transform .25s;
+  display:flex;
+  flex-direction:column;
+
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+}
+
+.project-body{
+  padding:16px;
+}
+
+.project-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.project-buttons{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.project-buttons .btn{
+  flex:unset;
+  padding:8px 14px;
+  font-size:14px;
+}
+
+.project-buttons img{
+  width:34px;
+  height:34px;
+  padding:5px;
+  border-radius:50%;
+  border:1px solid var(--dark);
+  background:#fff;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.project-buttons img:hover{
+  transform:scale(1.08);
+  background:var(--accent);
+}
+
+
+.read-more-btn{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  padding:10px 16px;
+  border-radius:999px;
+  transition:background .3s;
+}
+
+.read-more-btn:hover{
+  background:var(--dark);
+}
+
+.project-description{
+  margin-top:12px;
+  line-height:1.4;
+}
+
+/* EXPERIENCE / EDUCATION */
+.exp-item{
+  background:var(--card);
+  padding:18px;
+  border-left:5px solid var(--accent);
+  border-radius:10px;
+}
+
+/* SKILLS / LANGUAGES */
+.skills-list span,.langs-list span{
+  background:var(--card);
+  padding:8px 12px;
+  border-radius:999px;
+  margin:6px;
+  display:inline-block;
+}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero-text h1{
+    font-size:36px;
+  }
+}

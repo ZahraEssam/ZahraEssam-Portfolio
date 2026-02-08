@@ -1,0 +1,44 @@
+/* ===== About Section ===== */
+.about{
+  padding:80px 20px;
+  background:var(--bg);
+}
+
+.about .section-title{
+  text-align:center;
+  font-size:2.5rem;
+  font-weight:700;
+  margin-bottom:40px;
+}
+
+.about-content{
+  max-width:900px;
+  margin:auto;
+  font-size:1.1rem;
+  color:var(--dark);
+  line-height:1.6;
+}
+
+/* Tech Chips داخل About */
+.about .tech-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-top:25px;
+}
+
+.about .tech-chips span{
+  background:rgba(139,76,59,0.1);
+  color:var(--accent);
+  padding:6px 12px;
+  border-radius:20px;
+  font-weight:500;
+  font-size:0.9rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about .tech-chips span:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
